@@ -11,21 +11,23 @@
 }
 
 :root {
-  --yb-green: #0B6E2F;
-  --yb-green-dark: #064d1f;
-  --yb-yellow: #FFD700;
+  /* Brand Guidelines: Indigo Blue primary, Yellow accent, White space */
+  --yb-indigo: #005775;
+  --yb-indigo-dark: #003d54;
+  --yb-indigo-light: #006d94;
+  --yb-yellow: #F8D006;
   --yb-yellow-light: #FFF3B0;
-  --yb-dark: #111111;
-  --yb-dark-2: #1a1a1a;
-  --yb-dark-3: #222222;
-  --yb-gray: #888888;
-  --yb-light: #f5f5f5;
+  --yb-dark: #0a1e2a;
+  --yb-dark-2: #0d2636;
+  --yb-dark-3: #132f40;
+  --yb-gray: #6b7c87;
+  --yb-light: #f5f7f9;
   --yb-white: #ffffff;
   --yb-red: #e53935;
   --radius: 12px;
   --radius-sm: 8px;
-  --shadow: 0 4px 24px rgba(0,0,0,0.3);
-  --shadow-sm: 0 2px 12px rgba(0,0,0,0.2);
+  --shadow: 0 4px 24px rgba(0,43,58,0.3);
+  --shadow-sm: 0 2px 12px rgba(0,43,58,0.2);
   --transition: 0.2s ease;
 }
 
@@ -34,12 +36,20 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background: var(--yb-dark);
   color: var(--yb-white);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+/* Tusker Grotesk substitute: Montserrat — bold geometric display for titles */
+h1, h2, .hero h1 {
+  font-family: 'Montserrat', 'Poppins', 'Arial Black', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 a {
@@ -75,7 +85,7 @@ img {
 
 .age-gate-card {
   background: var(--yb-dark-2);
-  border: 2px solid var(--yb-green);
+  border: 2px solid var(--yb-indigo);
   border-radius: var(--radius);
   padding: 40px 32px;
   text-align: center;
@@ -94,6 +104,7 @@ img {
   font-size: 24px;
   margin-bottom: 12px;
   color: var(--yb-yellow);
+  text-transform: uppercase;
 }
 
 .age-gate-card p {
@@ -129,19 +140,21 @@ img {
   cursor: pointer;
   transition: all var(--transition);
   text-decoration: none;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
 }
 
 .btn-primary {
-  background: var(--yb-green);
-  color: var(--yb-white);
+  background: var(--yb-yellow);
+  color: var(--yb-indigo);
 }
 
 .btn-primary:hover {
-  background: var(--yb-green-dark);
-  color: var(--yb-white);
+  background: var(--yb-yellow-light);
+  color: var(--yb-indigo);
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(11, 110, 47, 0.4);
+  box-shadow: 0 4px 16px rgba(248, 208, 6, 0.4);
 }
 
 .btn-secondary {
@@ -177,26 +190,24 @@ img {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--yb-white);
-  letter-spacing: -0.02em;
 }
 
-.logo-icon {
-  width: 36px;
-  height: 36px;
-  background: var(--yb-green);
-  border-radius: 8px;
+.logo a {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 20px;
 }
 
-.logo-text span {
-  color: var(--yb-yellow);
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.logo-badge {
+  display: none;
+}
+
+.logo-text {
+  display: none;
 }
 
 .top-bar-right {
@@ -223,7 +234,7 @@ img {
 }
 
 .lang-toggle a.active {
-  background: var(--yb-green);
+  background: var(--yb-indigo);
   color: var(--yb-white);
 }
 
@@ -249,7 +260,7 @@ img {
   background: linear-gradient(
     135deg,
     var(--yb-dark) 0%,
-    var(--yb-green-dark) 50%,
+    var(--yb-indigo) 50%,
     var(--yb-dark) 100%
   );
   overflow: hidden;
@@ -260,8 +271,8 @@ img {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 50%, rgba(11, 110, 47, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 50%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(0, 87, 117, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(248, 208, 6, 0.08) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -272,11 +283,11 @@ img {
 }
 
 .hero h1 {
-  font-size: 28px;
-  font-weight: 800;
-  line-height: 1.2;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.05;
   margin-bottom: 16px;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
 }
 
 .hero h1 span {
@@ -288,45 +299,66 @@ img {
   color: rgba(255,255,255,0.75);
   max-width: 500px;
   margin: 0 auto 24px;
-}
-
-/* Match Ticker */
-.match-ticker {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  padding: 16px 20px;
-  background: rgba(0,0,0,0.3);
-  border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,0.08);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.ticker-badge {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--yb-yellow);
-  background: rgba(255,215,0,0.1);
-  padding: 4px 10px;
-  border-radius: 4px;
-}
-
-.ticker-match {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
 }
 
-.ticker-vs {
-  color: var(--yb-gray);
-  font-size: 12px;
+/* Hero Showcase — League & Casino Logos */
+.hero-showcase {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.showcase-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 14px 20px;
+  background: rgba(0,0,0,0.3);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.showcase-logo {
+  height: 32px;
+  width: auto;
+  opacity: 0.9;
+  transition: opacity 0.2s, transform 0.2s;
+  object-fit: contain;
+}
+
+.showcase-logo:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.league-logo {
+  height: 36px;
+}
+
+.game-logo {
+  height: 40px;
+  border-radius: 6px;
+}
+
+.badge-framed {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 4px 6px;
+}
+
+@media (max-width: 520px) {
+  .showcase-row {
+    gap: 12px;
+    padding: 12px 14px;
+  }
+  .league-logo { height: 28px; }
+  .game-logo { height: 34px; }
 }
 
 /* ── Geo Suggestion ──────────────────────────────────── */
@@ -340,7 +372,7 @@ img {
 .geo-card {
   max-width: 480px;
   margin: 0 auto;
-  background: linear-gradient(135deg, var(--yb-green) 0%, var(--yb-green-dark) 100%);
+  background: linear-gradient(135deg, var(--yb-indigo) 0%, var(--yb-indigo-dark) 100%);
   border-radius: var(--radius);
   padding: 32px 24px;
   text-align: center;
@@ -382,20 +414,21 @@ img {
 .geo-cta {
   display: block;
   background: var(--yb-yellow);
-  color: var(--yb-dark) !important;
+  color: var(--yb-indigo) !important;
   padding: 16px 32px;
   border-radius: var(--radius-sm);
   font-size: 18px;
   font-weight: 800;
   margin-bottom: 16px;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .geo-cta:hover {
   background: var(--yb-yellow-light);
-  color: var(--yb-dark) !important;
+  color: var(--yb-indigo) !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255,215,0,0.3);
+  box-shadow: 0 6px 20px rgba(248,208,6,0.3);
 }
 
 .geo-brand {
@@ -427,8 +460,8 @@ img {
 
 .markets-section h2 {
   text-align: center;
-  font-size: 24px;
-  font-weight: 800;
+  font-size: 36px;
+  font-weight: 400;
   margin-bottom: 8px;
 }
 
@@ -452,7 +485,7 @@ img {
 }
 
 .market-search-wrap input:focus {
-  border-color: var(--yb-green);
+  border-color: var(--yb-indigo);
 }
 
 .market-search-wrap input::placeholder {
@@ -509,7 +542,7 @@ img {
 }
 
 .market-card:hover {
-  border-color: var(--yb-green);
+  border-color: var(--yb-indigo);
   transform: translateY(-4px);
   box-shadow: var(--shadow);
 }
@@ -538,11 +571,18 @@ img {
   color: rgba(255,255,255,0.8);
 }
 
+.brand-logo-img {
+  height: 32px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+}
+
 .powered-badge {
   font-size: 11px;
   font-weight: 600;
   color: var(--yb-yellow);
-  background: rgba(255,215,0,0.1);
+  background: rgba(248,208,6,0.1);
   padding: 3px 10px;
   border-radius: 20px;
   letter-spacing: 0.02em;
@@ -574,10 +614,11 @@ img {
 }
 
 .trust-section h2 {
-  font-size: 22px;
-  font-weight: 800;
+  font-size: 36px;
+  font-weight: 400;
   margin-bottom: 16px;
   color: var(--yb-yellow);
+  text-transform: uppercase;
 }
 
 .trust-section p {
@@ -696,7 +737,7 @@ img {
   left: 0;
   right: 0;
   z-index: 90;
-  background: var(--yb-green);
+  background: var(--yb-indigo);
   padding: 12px 20px;
   text-align: center;
   box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
@@ -726,7 +767,7 @@ img {
   }
 
   .hero h1 {
-    font-size: 42px;
+    font-size: 72px;
   }
 
   .hero p {
@@ -738,7 +779,7 @@ img {
   }
 
   .markets-section h2 {
-    font-size: 28px;
+    font-size: 44px;
   }
 
   .trust-section {

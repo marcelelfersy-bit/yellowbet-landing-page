@@ -3,18 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yellowbet — Your Ultimate Betting Destination in Africa</title>
-  <meta name="description" content="Yellowbet powers licensed sports betting across 10+ African markets. Join millions of bettors. Bet on EPL, UCL, and more.">
+  <title>YellowBet — Betting That Feels Right</title>
+  <meta name="description" content="YellowBet powers licensed sports betting across 10+ African markets. Every game brings new possibilities. Play with confidence.">
 
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://ipapi.co" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Favicon (Yellowbet green) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230B6E2F'/><text y='72' x='18' font-size='64' font-weight='bold' fill='%23FFD700'>Y</text></svg>">
+  <!-- Brand Fonts: Montserrat (Tusker Grotesk substitute for titles) + Poppins (body/subtitle) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Favicon: Indigo rounded square with yellow person badge (per brand app icon spec) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23005775'/><circle cx='50' cy='50' r='36' fill='%23F8D006'/><circle cx='50' cy='34' r='7' fill='%23005775'/><ellipse cx='36' cy='58' rx='14' ry='22' fill='%23005775' transform='rotate(-25 36 58)'/><ellipse cx='64' cy='58' rx='14' ry='22' fill='%23005775' transform='rotate(25 64 58)'/><circle cx='50' cy='50' r='4' fill='%23F8D006'/></svg>">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Yellowbet — Sports Betting in Africa">
-  <meta property="og:description" content="Licensed sports betting across 10+ African markets. Join now and get your welcome bonus.">
+  <meta property="og:title" content="YellowBet — Betting That Feels Right">
+  <meta property="og:description" content="Licensed sports betting across 10+ African markets. Every game brings new possibilities. Play now.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yellowbet.com">
 
@@ -32,8 +37,8 @@
       <h2 id="age-title">Age Verification</h2>
       <p id="age-message">You must be 18 years or older to access this site. By continuing, you confirm you meet the minimum age requirement.</p>
       <div class="age-gate-actions">
-        <button id="age-confirm" class="btn btn-primary btn-lg">I am 18+</button>
-        <button id="age-decline" class="btn btn-secondary btn-lg">I am under 18</button>
+        <button id="age-confirm" class="btn btn-primary btn-lg">I AM 18+</button>
+        <button id="age-decline" class="btn btn-secondary btn-lg">I AM UNDER 18</button>
       </div>
     </div>
   </div>
@@ -46,8 +51,9 @@
     <!-- ── Top Bar ───────────────────────────────────── -->
     <header class="top-bar">
       <div class="logo">
-        <div class="logo-icon">⚽</div>
-        <div class="logo-text">Yellow<span>bet</span></div>
+        <a href="/" aria-label="YellowBet Home">
+          <img src="assets/logos/yellowbet_logo_header.png" alt="YellowBet" class="logo-img" height="40">
+        </a>
       </div>
       <div class="top-bar-right">
         <nav class="lang-toggle" aria-label="Language">
@@ -62,21 +68,24 @@
     <!-- ── Hero Section ──────────────────────────────── -->
     <section class="hero">
       <div class="hero-content">
-        <h1 id="hero-title">Your Ultimate <span>Betting Destination</span> in Africa</h1>
-        <p id="hero-sub">Licensed & regulated in 10+ countries. Join millions of bettors across the continent.</p>
+        <h1 id="hero-title">Africa's <span>Brightest Bet</span></h1>
+        <p id="hero-sub">Licensed across multiple African markets — join millions who play with confidence.</p>
 
-        <!-- Match Ticker — Static placeholder; replace with live data feed -->
-        <div class="match-ticker">
-          <span class="ticker-badge">EPL & UCL</span>
-          <div class="ticker-match">
-            <span>Arsenal</span>
-            <span class="ticker-vs">vs</span>
-            <span>Liverpool</span>
+        <!-- Top Leagues & Casino Games -->
+        <div class="hero-showcase">
+          <div class="showcase-row">
+            <img src="assets/logos/leagues/epl.png" alt="Premier League" class="showcase-logo league-logo">
+            <img src="assets/logos/leagues/laliga.png" alt="La Liga" class="showcase-logo league-logo">
+            <img src="assets/logos/leagues/bundesliga.png" alt="Bundesliga" class="showcase-logo league-logo">
+            <img src="assets/logos/leagues/seriea.png" alt="Serie A" class="showcase-logo league-logo">
+            <img src="assets/logos/leagues/ligue1.png" alt="Ligue 1" class="showcase-logo league-logo badge-framed">
+            <img src="assets/logos/leagues/ligaportugal.png" alt="Liga Portugal" class="showcase-logo league-logo">
           </div>
-          <div class="ticker-match">
-            <span>Barcelona</span>
-            <span class="ticker-vs">vs</span>
-            <span>PSG</span>
+          <div class="showcase-row">
+            <img src="assets/logos/games/aviator.svg" alt="Aviator by Spribe" class="showcase-logo game-logo">
+            <img src="assets/logos/games/jetx.svg" alt="JetX by SmartSoft" class="showcase-logo game-logo">
+            <img src="assets/logos/games/chicken-road.png" alt="Chicken Road by InOut" class="showcase-logo game-logo">
+            <img src="assets/logos/games/sweet-bonanza.png" alt="Sweet Bonanza by Pragmatic Play" class="showcase-logo game-logo">
           </div>
         </div>
       </div>
@@ -104,29 +113,26 @@
     <!-- ── Trust Section ─────────────────────────────── -->
     <section class="trust-section">
       <div class="trust-inner">
-        <h2 id="trust-title">The Yellowbet Family of Brands</h2>
-        <p id="trust-desc">Yellowbet powers licensed sports betting and casino brands across Sub-Saharan Africa. Whether you know us as Yellowbet, GSB, Winner, or Starbet — you're backed by the same trusted platform, technology, and commitment to fair play.</p>
+        <h2 id="trust-title">The YellowBet Family</h2>
+        <p id="trust-desc">YellowBet powers licensed sports betting across Sub-Saharan Africa. Backed by a trusted platform, fair play, and a brighter way to bet.</p>
 
         <div class="stats-row">
           <div class="stat-item">
-            <span class="stat-number">10+</span>
+            <span class="stat-number">4</span>
             <span class="stat-label" id="stat-countries-label">Licensed Markets</span>
           </div>
           <div class="stat-item">
             <span class="stat-number">2M+</span>
-            <span class="stat-label" id="stat-users-label">Active Bettors</span>
+            <span class="stat-label" id="stat-users-label">Active Players</span>
           </div>
           <div class="stat-item">
             <span class="stat-number">✓</span>
-            <span class="stat-label" id="stat-regulated-label">Fully Regulated</span>
+            <span class="stat-label" id="stat-regulated-label">Fair & Regulated</span>
           </div>
         </div>
 
         <div class="brand-logos">
-          <span class="brand-logo-item highlight">Yellowbet</span>
-          <span class="brand-logo-item">GSB</span>
-          <span class="brand-logo-item">Winner</span>
-          <span class="brand-logo-item">Starbet</span>
+          <span class="brand-logo-item highlight">YellowBet</span>
         </div>
       </div>
     </section>
@@ -145,7 +151,7 @@
         <a href="#">Privacy Policy</a>
       </nav>
 
-      <p class="footer-copy">© 2026 Yellowbet / B2Tech. All rights reserved.</p>
+      <p class="footer-copy">© 2026 YellowBet / B2Tech. All rights reserved.</p>
     </footer>
 
   </div><!-- /main-content -->

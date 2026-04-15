@@ -120,12 +120,16 @@
         ? ""
         : '<span class="powered-badge">' + t.poweredBy + '</span>';
 
+      var brandLogoHtml = market.logoUrl
+        ? '<img src="' + market.logoUrl + '" alt="' + market.brand + '" class="brand-logo-img">'
+        : '<span class="brand-name">' + market.brand + '</span>';
+
       html +=
         '<div class="market-card" data-country="' + market.countryCode + '">' +
           '<div class="market-flag">' + market.flag + '</div>' +
           '<h3 class="market-country">' + countryName + '</h3>' +
           '<div class="market-brand">' +
-            '<span class="brand-name">' + market.brand + '</span>' +
+            brandLogoHtml +
             poweredBadge +
           '</div>' +
           '<div class="market-bonus">' + market.welcomeBonus + '</div>' +
