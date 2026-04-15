@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Strategy docs (sensitive business documents)
+strategy/
+
+# IDE
+*.code-workspace
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
