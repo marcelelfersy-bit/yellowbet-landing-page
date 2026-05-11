@@ -9,7 +9,7 @@ import os
 import sys
 import urllib.error
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timezone
 
 import anthropic
 
@@ -117,7 +117,7 @@ def main() -> None:
     config = CONFIG[DIGEST_KIND]
     client = anthropic.Anthropic()
 
-    now = datetime.utcnow()
+    now = datetime.now(timezone.utc)
     date_str = f"{now.strftime('%a')} {now.day} {now.strftime('%b %Y')}"
     user_msg = (
         f"Compose today's digest for {date_str}. "
@@ -135,8 +135,11 @@ def main() -> None:
         model="claude-haiku-4-5",
         max_tokens=8000,
         tools=[
-            {"type": "web_search_20260209", "name": "web_search", "max_uses": MAX_WEB_SEARCHES},
-            {"type": "web_fetch_20260209", "name": "web_fetch", "max_uses": MAX_WEB_FETCHES},
+            # `allowed_callers=["direct"]` forces traditional tool-call rounds.
+            # The default ("code") uses programmatic tool calling which Haiku 4.5
+            # does not support — returns 400 if left at the default on this model.
+            {"type": "web_search_20260209", "name": "web_search", "max_uses": MAX_WEB_SEARCHES, "allowed_callers": ["direct"]},
+            {"type": "web_fetch_20260209", "name": "web_fetch", "max_uses": MAX_WEB_FETCHES, "allowed_callers": ["direct"]},
         ],
         system=config["system"],
         messages=[{"role": "user", "content": user_msg}],
