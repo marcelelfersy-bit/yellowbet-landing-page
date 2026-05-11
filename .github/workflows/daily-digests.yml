@@ -31,6 +31,11 @@ jobs:
 
   ceo-brief:
     name: CEO Brief Daily
+    # Wait for iGaming to finish so we don't compete for the Anthropic API
+    # input-tokens-per-minute rate limit (50K ITPM on Tier 1). Run even if
+    # iGaming fails, so a transient iGaming error doesn't suppress this one.
+    needs: igaming
+    if: ${{ always() && needs.igaming.result != 'cancelled' }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
