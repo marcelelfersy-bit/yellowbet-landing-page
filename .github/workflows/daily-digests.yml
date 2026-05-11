@@ -46,6 +46,10 @@ jobs:
           cache: pip
           cache-dependency-path: scripts/requirements.txt
       - run: pip install -r scripts/requirements.txt
+      - name: Wait for Anthropic rate-limit bucket to refill after iGaming run
+        # Tier 1 ITPM is a 60s rolling window. Sleeping ~75s after iGaming
+        # finishes lets the bucket clear before CEO Brief's first call.
+        run: sleep 75
       - name: Compose and send CEO Brief
         env:
           DIGEST_KIND: ceo

@@ -115,7 +115,9 @@ def main() -> None:
         sys.exit(2)
 
     config = CONFIG[DIGEST_KIND]
-    client = anthropic.Anthropic()
+    # max_retries=5 (default is 2) handles transient rate-limit bursts mid-loop.
+    # The SDK uses exponential backoff and respects retry-after headers.
+    client = anthropic.Anthropic(max_retries=5)
 
     now = datetime.now(timezone.utc)
     date_str = f"{now.strftime('%a')} {now.day} {now.strftime('%b %Y')}"
