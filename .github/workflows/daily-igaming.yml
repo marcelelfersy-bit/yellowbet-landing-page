@@ -2,8 +2,11 @@ name: iGaming Daily Digest
 
 on:
   schedule:
-    # 03:00 UTC = 06:00 Cyprus EEST (summer) / 05:00 EET (winter)
-    - cron: '0 3 * * *'
+    # 03:07 UTC = 06:07 Cyprus EEST (summer) / 05:07 EET (winter)
+    # Off-hour minute to dodge GitHub Actions' contested xx:00 / xx:30
+    # scheduler queue — round-hour cron slots are known to be throttled or
+    # skipped during peak times.
+    - cron: '7 3 * * *'
   workflow_dispatch: {}
 
 permissions:

@@ -2,10 +2,13 @@ name: CEO Brief Daily
 
 on:
   schedule:
-    # 03:30 UTC = 06:30 Cyprus EEST (summer) / 05:30 EET (winter)
+    # 03:37 UTC = 06:37 Cyprus EEST (summer) / 05:37 EET (winter)
     # Spaced 30 min after iGaming Daily Digest to keep clear of the
-    # Anthropic API Tier 1 50K ITPM rolling rate-limit window.
-    - cron: '30 3 * * *'
+    # Anthropic API Tier 1 50K ITPM rolling rate-limit window. Off-hour
+    # minute (xx:37) also dodges GitHub Actions' contested round-hour
+    # scheduler queue — runs at xx:00 / xx:30 are more likely to be
+    # throttled or skipped during peak times.
+    - cron: '37 3 * * *'
   workflow_dispatch: {}
 
 permissions:
